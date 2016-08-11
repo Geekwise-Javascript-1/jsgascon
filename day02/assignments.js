@@ -146,3 +146,9 @@
 //
 //   }
 // }
+
+// git status // what changes have been made
+
+// git add . // will add all changes to be tracked
+// git commit -m 'you message' // commits changes to be pushed
+// git push // pushes changes to repo
