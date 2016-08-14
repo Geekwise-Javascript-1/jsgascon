@@ -152,3 +152,13 @@
 // git add . // will add all changes to be tracked
 // git commit -m 'you message' // commits changes to be pushed
 // git push // pushes changes to repo
+
+
+// Week day 3 assignment
+var userResp = prompt('What would you like to do?');
+if(userResp == isNaN('') || userResp == isNaN(undefined)){
+  alert('You did not put a response.')
+}else{
+  alert(userResp);
+  console.log(userResp);
+}
