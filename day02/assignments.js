@@ -155,10 +155,47 @@
 
 
 // Week day 3 assignment
-var userResp = prompt('What would you like to do?');
-if(userResp == isNaN('') || userResp == isNaN(undefined)){
-  alert('You did not put a response.')
+// var userResp = prompt('What would you like to do?');
+// if(userResp == isNaN('') || userResp == isNaN(undefined)){
+//   alert('You did not put a response.')
+// }else{
+//   alert(userResp);
+//   console.log(userResp);
+// }
+
+
+// var userResp = prompt('What do you want to do?');
+// console.log(userResp);
+
+// ""
+// null
+
+/*
+var userResp = prompt('What do you want to do?');
+console.log(userResp);
+if(userResp > ' '){
+  alert(userResp);
+}else{
+  alert('please enter a value');
+}
+*/
+/*
+var userResp = prompt('What do you want to do?');
+console.log(userResp);
+
+if(userResp == null || userResp == ''){
+  alert('enter something');
 }else{
   alert(userResp);
-  console.log(userResp);
+}
+*/
+
+
+var userResp = prompt('What do you want to do?');
+console.log(userResp);
+
+if(userResp == null || userResp >= ''){
+  alert('enter something');
+}else{
+  alert(userResp);
 }
