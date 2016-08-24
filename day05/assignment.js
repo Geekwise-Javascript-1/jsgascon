@@ -6,21 +6,30 @@
 // replace div text with value of input2
 
 var btn = document.getElementById('btn');
-var input1 = document.getElementById('input1');
-var input2 = document.getElementById('input2');
-var textbox = document.getElementById('textbox');
 
 function btnClick(){
-    // alert('user clicked on the button');
-    alert('Hello Javascript!');
     getUserInput1();
+    alert('Hello Javascript!');
     getUserInput2();
 }
 btn.onclick = btnClick;
 
-function getUserInput1(input1){
-  input1 = ''
+function getUserInput1(){
+  // Get user input1 value
+  var changeinput1 = document.getElementById('input1').value;
+  console.log(changeinput1);
+  // Change user input1 value
+  var changeinput1 = document.getElementById('input1').value = "Hello Javascript!";
+  console.log(changeinput1);
 }
-function getUserInput2(input2){
-
+function getUserInput2(){
+  // Get user input2 value
+  var changeinput2 = document.getElementById('input2').value;
+  console.log(changeinput2);
+  // Get textbox value
+  var changetextbox = document.getElementById('textbox').innerHTML;
+  console.log(changetextbox);
+  // Change textbox value to user input2
+  var changetextbox = document.getElementById('textbox').innerHTML = changeinput2;
+  console.log(changetextbox);
 }
