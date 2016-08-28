@@ -5,29 +5,23 @@
 // 3. When “submit” button is pressed, each press outputs to the console an array of all input values
 
 
-// var submitBtn = document.getElementById('submit');
+var submitBtn = document.getElementById('submit');
 var form = document.getElementsByTagName('form')[0];
+submitBtn.onclick = getVals;
 
-// submitBtn.onclick = getVals;
+var addbtn = document.getElementById('btn'); // makes the add button functional to add a new form
+var addform = document.getElementsByTagName('label')[4]; // adds new form in the location before submit button
+addbtn.onclick = addInput; // jumps to the function to insert a form box
 
 function getVals(e){
-  e.preventDefault();
-  var valArr = [];
-  for(var i = 0; i < form.elements.length-1; i++){
-    valArr.push(form.elements[i].value);
-    // console.log(form.elements[i].value);
-  }
-  // valArr.pop();
-  console.log(valArr);
-}
-
-var lis = document.getElementsByTagName('li');
-for(var i = 0; i < lis.length; i++){
-  lis[i].addEventListener('click', function(e){
-    console.log(e.currentTarget.textContent);
-    console.log(e.target.textContent);
-    console.log(this.textContent);
-  });
+    e.preventDefault();
+    var valArr = [];
+    for(var i = 0; i < form.elements.length; i++){
+        valArr.push(form.elements[i].value);
+    }
+    valArr.pop();
+    addInput();
+    console.log(valArr);
 }
 
 var inputEl = document.createElement('input');
@@ -35,7 +29,16 @@ inputEl.id = 'newId';
 inputEl.name = 'new';
 inputEl.type = 'email';
 inputEl.placeholder = 'example@email.com';
-// document.body.appendChild(inputEl);
 form.appendChild(inputEl);
-
 console.log(inputEl);
+
+function addInput(){
+  var newInputEl = document.createElement('input');
+  newInputEl.id = 'addId';
+  newInputEl.name = 'addName';
+  newInputEl.type = 'text';
+  newInputEl.placeholder = "Enter new data";
+  addform.appendChild(newInputEl);
+
+  // console.log(newInputEl);
+}

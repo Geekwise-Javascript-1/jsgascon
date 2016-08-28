@@ -36,7 +36,7 @@
 
 var inp1 = document.getElementById('input1');
 var inp2 = document.getElementById('input2');
-var ibtn = document.getElementById('btn');
+var btn = document.getElementById('btn');
 var output = document.getElementById('output');
 
 function btnClick(){
