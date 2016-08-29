@@ -20,7 +20,6 @@ function getVals(e){
         valArr.push(form.elements[i].value);
     }
     valArr.pop();
-    addInput();
     console.log(valArr);
 }
 
@@ -30,6 +29,7 @@ inputEl.name = 'new';
 inputEl.type = 'email';
 inputEl.placeholder = 'example@email.com';
 form.appendChild(inputEl);
+
 console.log(inputEl);
 
 function addInput(){
