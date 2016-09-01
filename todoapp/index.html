@@ -3,17 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Final Project</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <form>
-    <h1>ToDo App</h1>
-    <label for="userInput">
-      <input type="text" name="userInput" id="userInput" value="" placeholder="Enter To Do Items">
-    </label>
-    <input type="submit" name="submit" value="submit">
+  <h1>To Do App</h1>
+  <form class="personal-info">
+    <label for="firstName">First name:
+      <input type="text" name="firstname" id="firstName" value="" placeholder="First Name" >
+    </label for="lastName"> <br>
+    <label>Last name:
+      <input type="text" name="lastname" id="lastName" value="" placeholder="Last Name" >
+    </label> <br>
+    <label for="email">E-mail:
+      <input type="email" name="email" id="email" value="" placeholder="example@email.com">
+    </label> <br>
   </form>
-  <button type="button" name="button">Add Field</button>
+
+  <form class="list">
+    <label for="itemList">Item List:
+      <input type="text" name="itemlist" id="itemList" value="" placeholder="Enter list of items" >
+    </label>
+    <button type="button" name="button">Add Field</button> <br>
+  </form>
+
+  <input type="submit" name="submit" value="submit">
 
   <script src="script.js"></script>
 </body>
