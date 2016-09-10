@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day07</title>
+  <style>
+    form{
+      border: 1px solid black;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .dot {
+      height: 6px;
+      width: 6px;
+      border-radius: 100%;
+      background-color: blue;
+      position: absolute;
+      /*transform: translate3d(-50%, -50%, 0);*/
+    }
+    header {
+      background-color: hsla(0, 0%, 0%, .5);
+    }
+    header.fixed{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  </style>
+
+  <script>
+    addEventListener('focus', function(){
+      //console.log('tab is in focus');
+    });
+    addEventListener('blur', function(){
+      // console.log('tab is out of focus');
+      // alert('wait what??');
+    });
+    addEventListener('mousemove', function(e){
+      // console.log(hasFocus());
+      // if(document.hasFocus() == false){
+      //   alert('what?');
+      // }
+      console.log(e.view);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- <div class="dot"></div> -->
+
+  <!-- <header>
+    <h1>My Nav</h1>
+  </header>
+
+  <button type="button" name="button">click me</button>
+
+  <a href="https://www.google.com/">Go to Google</a>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio enim natus vel minus obcaecati eveniet, at, quas, eaque neque expedita quia eos? Repellat minus impedit sapiente, quidem, vero perspiciatis molestiae sint ad facere facilis soluta esse optio eos, vel quam animi architecto veniam quo possimus repudiandae deleniti! Sunt reprehenderit vitae, quia consequuntur aut neque quaerat enim hic suscipit illum deleniti, omnis iure. Nam dicta molestias alias nihil, vel maiores animi ratione quas quaerat dolore modi quae impedit quis, sunt ea! Itaque nobis delectus magnam culpa laborum labore, vel nesciunt ratione libero vero rem, excepturi eveniet, officia officiis quasi suscipit deleniti.
+  </p> -->
+
+
+  <form>
+    <label for="first">First Name
+      <input type="text" name="first" id="first" value="" placeholder="First">
+    </label>
+    <label for="last">Last Name
+      <input type="text" name="last" id="last" value="" placeholder="Last">
+    </label>
+    <label for="email">Email
+      <input type="email" name="email" id="email" value="" placeholder="example@gmail.com">
+    </label>
+    <input type="submit" name="submit" value="submit">
+  </form>
+  <button type="button" name="button">Add Field</button>
+
+  <script src="review.js"></script>
+  <!-- <script src="script.js"></script> -->
+  <!-- <script src="assignment.js"></script> -->
+
+</body>
+</html>
