@@ -118,14 +118,15 @@
 
 
 
-function Person(name, age, job){
-  this.name = name;
-  this.age = age;
-  this.job = job;
-  this.sayName = function(){
-    alert(this.name);
-  };
-}
+// function Person(name, age, job){
+//   this.name = name;
+//   this.age = age;
+//   this.job = job;
+//   this.sayName = function(){
+//     alert(this.name);
+//   };
+// }
+
 
 var loginNum = 0;
 function Login(user){
@@ -156,6 +157,7 @@ function build(){
     form.appendChild(label);
     form.appendChild(submit);
     login.appendChild(form);
+  }
 }
 
 var login1 = new Login('matt');

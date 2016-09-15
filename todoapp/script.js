@@ -1,42 +1,82 @@
 
-var theForm1 = document.getElementsByClassName('personal-info')[0];
-var theForm2 = document.getElementsByClassName('list')[0];
-var submitBtn = document.querySelector('input[type="submit"]');
-var addBtn = document.getElementById('addfield');
-submitBtn.addEventListener('click', getInputValues);
-addfield.addEventListener('click', createField);
+// get the input values from the box container
+function getInputValues() {
+  item.focus();
+  item.select();
 
-function getInputValues(e){
-  e.preventDefault();
-  var pinputs = [];
-  for( var i = 0; i < theForm1.elements.length; i++){
-    pinputs.push(theForm1.elements[i].value);
+  var list = new Array;
+  var itemStr = localStorage.getItem('storeList');
+  if (itemStr !== null) {
+    list = JSON.parse(itemStr);
   }
-  console.log(pinputs);
+  return list;
+}
 
-  var linputs = [];
-  for( var i = 0; i < theForm2.elements.length-1; i++){
-    linputs.push(theForm2.elements[i].value);
+// add the new item or action to the array list and storage
+function add() {
+  var item = document.getElementById('item').value;
+
+  var list = getInputValues();
+  list.push(item);
+  localStorage.setItem('storeList', JSON.stringify(list));
+
+  display();
+  return false;
+}
+
+// remove the chosen item or action from the array list and storage
+function remove() {
+  var id = this.getAttribute('id');
+  var list = getInputValues();
+  list.splice(id, 1);
+  localStorage.setItem('storeList', JSON.stringify(list));
+
+  display();
+  return false;
+}
+
+// update or change the item or action from the array list and storage
+function update() {
+  var id = this.getAttribute('id');
+  var list = getInputValues();
+  list.splice(id, 1);
+  localStorage.setItem('storeList', JSON.stringify(list));
+
+  var newText = prompt("What should this item be renamed?");
+  var item = newText;
+  list.splice(id, 0, item);
+  localStorage.setItem('storeList', JSON.stringify(list));
+
+  display();
+  return false;
+}
+
+// To print the item or action list on html
+function display() {
+  var list = getInputValues();
+
+  // construct the html to display on the screen
+  var html = '<ul>';
+  for(var i = 0; i < list.length; i++) {
+    html += '<li>' + '['+ i + ']. ' + list[i] + '<button class="delBox" id="' + i + '">Delete</button>' + '<button class="upBox" id="' + i + '">Update</button> </li>';
+  };
+  html += '</ul>';
+  document.getElementById('list').innerHTML = html;
+
+  // the delete button
+  var delbox = document.getElementsByClassName('delBox');
+  for (var i = 0; i < delbox.length; i++) {
+    delbox[i].addEventListener('click', remove);
+  };
+
+  // the update button
+  var updatebox = document.getElementsByClassName('upBox');
+  for(var i = 0; i <updatebox.length; i++){
+    updatebox[i].addEventListener('click', update);
   }
-  console.log(linputs);
+
 }
 
-var incNum = 1;
-function createField(){
-  var newLabel = document.createElement('label');
-  newLabel.setAttribute("for", "generic"+incNum);
-  newLabel.innerHTML = "Generic Label";
-
-  var newInput = document.createElement('input');
-  newInput.id = "generic"+incNum;
-  newInput.name = "generic";
-  newInput.type = "text";
-  newInput.placeholder = "Generic Input Box";
-
-  addToForm(newLabel, newInput);
-  incNum++;
-}
-function addToForm(newLabel, newInput){
-  newLabel.appendChild(newInput);
-  theForm2.insertBefore(newLabel, addBtn);
-}
+var start = document.getElementById('add');
+start.addEventListener('click', add);
+display();
